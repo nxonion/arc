@@ -10,7 +10,7 @@ router = APIRouter(prefix="/api/categories", tags=["categories"])
 
 @router.get("", response_model=List[CategoryResponse], status_code=status.HTTP_200_OK)
 def get_categories(db: Session = Depends(get_db)):
-    service = CategoryService(get_db)  # pyright: ignore[reportArgumentType]
+    service = CategoryService(db)  # pyright: ignore[reportArgumentType]
     return service.get_all_categories()
 
 
