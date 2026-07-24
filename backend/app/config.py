@@ -4,8 +4,8 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     app_name: str = "Arc Int"
     debug: bool = True
-    database_url: str = "sqlite:/// ./arc.db"
-    cors_origins: list = [
+    database_url: str = "sqlite:///./arc.db"
+    cors_origins: list = [ # type: ignore
         "http://localhost:5173",
         "http://localhost:3000",
         "http://127.0.0.1:5173",
